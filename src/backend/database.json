@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "username": "marco",
+      "password": "pelleu2"
+    },
+    {
+      "username": "MARCO",
+      "password": "PELLEU2"
+    },
+    {
+      "username": "simo",
+      "password": "erty"
+    },
+    {
+      "username": "simobbbb",
+      "password": "sedrft"
+    },
+    {
+      "username": "luca",
+      "password": "lucia"
+    },
+    {
+      "username": "giacomo",
+      "password": "giacomo"
+    },
+    {
+      "username": "alberta",
+      "password": "canada"
+    }
+  ]
+}
