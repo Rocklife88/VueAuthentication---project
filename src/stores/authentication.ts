@@ -9,7 +9,7 @@ interface AuthenticationState {
 
 export const useAuthenticationStore = defineStore('authentication', {
   state: (): AuthenticationState => ({
-    isAuthenticated: !!localStorage.getItem('token'), // Controlla se c'è un token salvato
+    isAuthenticated: !!localStorage.getItem('token'), // Check if there's a saved token
     token: localStorage.getItem('token') || '',
   }),
   actions: {
@@ -19,7 +19,7 @@ export const useAuthenticationStore = defineStore('authentication', {
         const response = await axios.post(`${apiUrl}/login`, { username, password });
         this.token = response.data.token;
         this.isAuthenticated = true;
-        localStorage.setItem('token', response.data.token); // Salva il token in localStorage
+        localStorage.setItem('token', response.data.token); // Save the token in localStorage
         return response.data.message;
       } catch (error) {
         console.error('Error during login:', error);
@@ -31,7 +31,7 @@ export const useAuthenticationStore = defineStore('authentication', {
     async registerUser(username: string, password: string) {
       try {
         const response = await axios.post(`${apiUrl}/register`, { username, password });
-        return response.data.message;
+        return response.data.message; // Simply return a message without logging in the user
       } catch (error) {
         console.error('Error during registration:', error);
         throw new Error('Registration failed');
@@ -42,7 +42,7 @@ export const useAuthenticationStore = defineStore('authentication', {
     logoutUser() {
       this.isAuthenticated = false;
       this.token = '';
-      localStorage.removeItem('token'); // Rimuovi il token da localStorage
+      localStorage.removeItem('token'); // Remove the token from localStorage
     },
   },
 });

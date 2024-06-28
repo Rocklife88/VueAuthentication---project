@@ -11,32 +11,26 @@ import About from '@/views/About.vue';
 import AboutContent from '@/components/AboutContent.vue';
 
 const routes = [
-{ path:'/', component: HomeView,
-  children: [
-    {
-      path: '/', // Questo renderà LoginContent all'interno del Login
-      component: HomeContent
-    }
-  ]
-},
-
-//
+  { path: '/', component: HomeView,
+    children: [
+      {
+        path: '', // Questo renderà HomeContent all'interno di HomeView
+        component: HomeContent
+      }
+    ]
+  },
   { path: '/register', component: Register,
     children: [
       {
-        path: '/register', 
+        path: '', // Questo renderà RegisterContent all'interno di Register
         component: RegisterContent
       }
     ]
-   },
-   // home
-  { path: '/', component: HomeView },
-  {
-    path: '/login',
-    component: Login,
+  },
+  { path: '/login', component: Login,
     children: [
       {
-        path: '', 
+        path: '', // Questo renderà LoginContent all'interno di Login
         component: LoginContent
       }
     ]
@@ -44,21 +38,19 @@ const routes = [
   { path: '/about', component: About,
     children: [
       {
-        path: '', 
+        path: '', // Questo renderà AboutContent all'interno di About
         component: AboutContent
       }
     ]
-   },
-
-  // dAshboard
+  },
   { path: '/dashboard', component: Dashboard,
     children: [
       {
-        path: '', 
+        path: '', // Questo renderà DashboardContent all'interno di Dashboard
         component: DashboardContent
       }
     ]
-   },
+  },
 ];
 
 const router = createRouter({
